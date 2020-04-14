@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://https://github.com/lyfordream</id>
     <title>Gridea</title>
-    <updated>2020-04-14T08:53:43.915Z</updated>
+    <updated>2020-04-14T08:58:42.591Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://https://github.com/lyfordream"/>
     <link rel="self" href="https://https://github.com/lyfordream/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://https://github.com/lyfordream/images/avatar.png</logo>
     <icon>https://https://github.com/lyfordream/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Java 多线程同步和异步]]></title>
+        <id>https://https://github.com/lyfordream/post/java-duo-xian-cheng-tong-bu-he-yi-bu/</id>
+        <link href="https://https://github.com/lyfordream/post/java-duo-xian-cheng-tong-bu-he-yi-bu/">
+        </link>
+        <updated>2020-04-14T08:41:40.000Z</updated>
+        <content type="html"><![CDATA[<p>java线程同步与异步<br>
+1.多线程并发时，多个线程同时请求同一个资源，必然导致此资源的数据不安全，A线程修改了B线程的处理的数据，而B线程又修改了A线程处理的数理。显然这是由于全局资源造成的，有时为了解决此问题，优先考虑使用局部变量，退而求其次使用同步代码块，出于这样的安全考虑就必须牺牲系统处理性能，加在多线程并发时资源挣夺最激烈的地方，这就实现了线程的同步机制。<br>
+同步：A线程要请求某个资源，但是此资源正在被B线程使用中，因为同步机制存在，A线程请求不到，怎么办，A线程只能等待下去。<br>
+异步：A线程要请求某个资源，但是此资源正在被B线程使用中，因为没有同步机制存在，A线程仍然请求的到，A线程无需等待。<br>
+显然，同步最最安全，最保险的。而异步不安全，容易导致死锁，这样一个线程死掉就会导致整个进程崩溃，但没有同步机制的存在，性能会有所提升。</p>
+<p>java中实现多线程<br>
+1.继承Thread,重写里面的run方法。<br>
+2.实现runnable接口。<br>
+两种方法推荐后者，第一，java没有单继承的限制；第二，还可以隔离代码。</p>
+<p>线程池<br>
+在计算机中任何资源的创建，包括线程，都需要消耗系统资源的。在Web服务中，对于Web服务器的响应速度必须要尽可能的快，这就容不得每次在用户提交请求按钮后，再创建线程提供服务。为了减少用户的等待时间，线程必须预先创建，放在线程池中，线程池可以用HashTable这种数据结构来实现，看了Apach HTTP服务器的线程池的源代码，就是HashTable,KEY用线程对象，value 用ControlRunnable,ControlRunnable是线程池中唯一能干活的线程，是它指派线程池中的线程对外提供服务。<br>
+出于安全考虑，Apach HTTP服务器的线程池它是同步的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://https://github.com/lyfordream/post/hello-gridea/</id>
